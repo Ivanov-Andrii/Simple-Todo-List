@@ -1,0 +1,75 @@
+@import "~bootstrap/scss/bootstrap";
+
+
+.myContainer {
+  max-width: 500px;
+  height: 100vh;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  align-content: start;
+}
+
+.icons {
+  display: inline-block;
+}
+
+.todos {
+  padding: 0;
+  .todo {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    height: 2em;
+    font-size: 16px;
+    border-bottom: 3px solid lightgray;
+    margin-top: 1em;
+    .todoCheck {
+      display: none;
+      }
+    .fakeCheckbox {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      border: 1px solid #0d6efd;
+      position: relative;
+      //border-radius: 50%;
+      margin-right: .5em;
+    }
+    .fakeCheckbox::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background-color: #0d6efd;
+      opacity: 0;
+      transition: .2s;
+      //border-radius: 50%;
+    }
+    .todoCheck:checked + .fakeCheckbox::before {
+      opacity: 1;
+    }
+
+    .todoDelete {
+      color: red;
+      font-size: 16px;
+      border: 1px solid red;
+      border-radius: 50%;
+      height: 16px;
+      width: 16px;
+      display: grid;
+      align-self: center;
+      place-content: center;
+      place-items: center;
+      padding-bottom: 2px;
+      padding-left: 1px;
+    }
+  }
+}
+
+
+
